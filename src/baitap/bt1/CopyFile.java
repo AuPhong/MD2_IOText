@@ -1,6 +1,7 @@
 package baitap.bt1;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class CopyFile {
     public static void copyFile(String sourceFile, String targetFile){
@@ -18,8 +19,13 @@ public class CopyFile {
             char[] chars;
             String line = null;
             int count = 0;
-            while((line=reader.readLine())!=null){
-                writer.write(line);
+//            while((line=reader.read())!=null){
+//                writer.write(line);
+//                count++;
+//            }
+            Scanner sc = new Scanner(reader);
+            while (sc.hasNext()){
+                writer.write(sc.next());
                 count++;
             }
             reader.close();
